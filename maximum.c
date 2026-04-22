@@ -112,8 +112,7 @@ int main()
 	}
 	
 //	Using ternary operator
-	int max = (a > b) ? ((a > x) ? ((a > y) ? a : y) : x): ((b > c) ? b : c);
-
-// Minimum using ternary operator
-int min = (a < b) ? ((a < c) ? a : c): ((b < c) ? b : c);
+	int max = (a > b && a > x && a > y) ? a : (b > x && b > y) ? b : (x > y) ? x : y;
+	int min = (a < b && a < y && a < y) ? a : (b < y && b < x) ? b : (x < y) ? x : y;
+	printf("\nThe maximum is %d and minimum is %d", max, min);
 }
